@@ -1,7 +1,7 @@
 public class Skeleton extends Monster {
     
     public Skeleton() {
-        super("Skeleton", 15, 10, 10);
+        super("Skeleton", 15, 2, 10);
     }
 
     @Override public void hurt(int amount, String damageType) {

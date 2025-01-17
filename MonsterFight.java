@@ -18,11 +18,17 @@ public class MonsterFight {
             if (randomNumber == 0) monster = new Zombie();
             else monster = new Skeleton();
 
-            round(monster);
+            if (round(monster)) {
+                break;
+            };
         }
+
+        if (health <= 0) System.out.println("You lose.");
+        else System.out.println("You won!");
+        System.out.println("You got " + points + " points.");
     }
 
-    public static void round(Monster monster) {
+    public static boolean round(Monster monster) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("A " + monster.getName() + " has spawned. It has " + monster.getHealth() + " health remaining.");
 
@@ -50,10 +56,14 @@ public class MonsterFight {
             System.out.println(monster.getName() + " has " + monster.getHealth() + " health remaining.");
             if (monster.isDead()) {
                 System.out.println("You killed " + monster.getName() + ".");
-                break;
+                return false;
             }
             health -= monster.getDamage();
             System.out.println(monster.getName() + " did " + monster.getDamage() + " damage. You have " + health + " remaining.");
+            if (health <= 0) {
+                return true;
+            }
         }
+        return false;
     }
 }

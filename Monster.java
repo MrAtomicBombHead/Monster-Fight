@@ -20,6 +20,7 @@ public class Monster {
         if (health <= 0) death();
     }
     private void death() {
+        dead = true;
         MonsterFight.score += this.score;
         System.out.println("You killed " + name + ". " + score + " points awarded.");
     }
