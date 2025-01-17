@@ -4,6 +4,7 @@ public class Monster {
     private int health;
     private int damage;
     private int score;
+    private boolean dead;
 
 
     public Monster(String name, int health, int damage, int score) {
@@ -11,6 +12,7 @@ public class Monster {
         this.health = health;
         this.damage = damage;
         this.score = score;
+        dead = false;
     }
 
     public void hurt(int amount, String damageType) {
@@ -31,5 +33,7 @@ public class Monster {
     public String getName() {
         return name;
     }
-
+    public boolean isDead() {
+        return dead;
+    }
 }
