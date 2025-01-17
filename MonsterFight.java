@@ -25,7 +25,7 @@ public class MonsterFight {
 
         if (health <= 0) System.out.println("You lose.");
         else System.out.println("You won!");
-        System.out.println("You got " + points + " points.");
+        System.out.println("You got " + score + " points.");
     }
 
     public static boolean round(Monster monster) {
